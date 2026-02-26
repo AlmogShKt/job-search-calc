@@ -475,6 +475,46 @@
               📊 ראה ניקוד מפורט
             </button>
           </div>
+          <!-- Feedback Section -->
+          <div class="feedback-section" id="feedbackSection">
+            <p class="feedback-question">כמה מועיל היה הכלי הזה?</p>
+            <div
+              class="feedback-emojis"
+              id="feedbackEmojis"
+              role="group"
+              aria-label="דירוג שימושיות"
+            >
+              <button
+                class="feedback-emoji-btn"
+                data-rating="1"
+                aria-label="לא מועיל"
+              >😞</button>
+              <button
+                class="feedback-emoji-btn"
+                data-rating="2"
+                aria-label="לא מועיל במיוחד"
+              >😐</button>
+              <button
+                class="feedback-emoji-btn"
+                data-rating="3"
+                aria-label="סביר"
+              >🙂</button>
+              <button
+                class="feedback-emoji-btn"
+                data-rating="4"
+                aria-label="מועיל"
+              >😊</button>
+              <button
+                class="feedback-emoji-btn"
+                data-rating="5"
+                aria-label="מאוד מועיל"
+              >🤩</button>
+            </div>
+            <p class="feedback-thanks hidden" id="feedbackThanks">
+              תודה על המשוב! 🙏
+            </p>
+          </div>
+
           <div class="button-group button-group--bottom">
             <button class="btn btn--ghost" data-action="reset">
               🔄 התחל מחדש

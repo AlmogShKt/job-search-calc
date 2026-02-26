@@ -1267,6 +1267,66 @@ body::before {
   text-decoration: underline;
 }
 
+/* ── Feedback Section ── */
+.feedback-section {
+  margin-block-start: 2rem;
+  padding-block-start: 1.5rem;
+  border-block-start: 1px solid var(--border);
+  text-align: center;
+}
+
+.feedback-question {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-block-end: 0.75rem;
+}
+
+.feedback-emojis {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.feedback-emoji-btn {
+  font-size: 1.75rem;
+  background: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 0.4rem 0.5rem;
+  transition: all var(--transition-fast);
+  line-height: 1;
+}
+
+.feedback-emoji-btn:hover:not(:disabled) {
+  transform: scale(1.2);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.feedback-emoji-btn.selected {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  transform: scale(1.15);
+}
+
+.feedback-emoji-btn:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.feedback-emoji-btn.selected:disabled {
+  opacity: 1;
+}
+
+.feedback-thanks {
+  margin-block-start: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .header-content {
