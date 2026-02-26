@@ -71,8 +71,8 @@
       title: "אתה במסלול הנכון!",
       messageClass: "message-box--success",
       message: `
-        <p>מעולה! אתה עומד בדרישות הסף האקדמיות <strong>וגם</strong> מתרגל שאלות אלגוריתמיות.</p>
-        <p>אתה במיקום מצוין – תמשיך לתרגל בצורה עקבית.</p>
+        <p>מעולה! אתה עומד בדרישות הסף האקדמיות, מתרגל שאלות אלגוריתמיות <strong>וגם</strong> יש לך פרויקט אישי.</p>
+        <p>אתה במיקום מצוין – תמשיך לתרגל בצורה עקבית ותתחיל להגיש.</p>
       `,
       actionsTitle: "הפוקוס שלך עכשיו:",
       actions: [
@@ -80,6 +80,23 @@
         "שיפור קורות חיים – תוצאות ומספרים",
         "Networking – לינקדאין, מיטאפים, הכרויות",
         "המשך תרגול LeetCode יומי",
+      ],
+      cta: true,
+    },
+    ready_needs_project: {
+      emoji: "💡",
+      title: "כמעט מוכן – חסר פרויקט אישי",
+      messageClass: "message-box--success",
+      message: `
+        <p>אתה עומד בדרישות הסף ומתרגל אלגוריתמים – מצוין!</p>
+        <p>פרויקט אישי ב-GitHub ישפר משמעותית את קורות החיים שלך וייתן לך מה לדבר עליו בראיון.</p>
+      `,
+      actionsTitle: "📋 ההמלצה שלנו:",
+      actions: [
+        "בנה פרויקט אישי משמעותי ב-GitHub",
+        "תוסיף README מסודר, טסטים ותיעוד",
+        "המשך תרגול LeetCode במקביל",
+        "התחל להגיש – הפרויקט יכול להתקדם במקביל",
       ],
       cta: true,
     },
@@ -101,24 +118,62 @@
         "עצור 4–6 שבועות לפני שמתחיל להגיש",
         "בנה שגרת תרגול יומית – Easy → Medium",
         "התחל מ-Blind 75 או NeetCode 150",
+        "בנה פרויקט אישי במקביל",
         "ורק אז – הגשות אגרסיביות",
       ],
       cta: true,
     },
     finish_courses_then_apply: {
       emoji: "📘",
+      title: "יש בסיס! סיים קורסים ואתה שם",
+      messageClass: "message-box--info",
+      message: `
+        <p>יש לך פרויקט אישי <strong>וגם</strong> אתה מתרגל אלגוריתמים – כל הכבוד! 👏</p>
+        <p>אבל יש הרבה מקומות שיפסלו אותך על הסף אם לא תסיים את כל הקורסים הרלוונטיים.</p>
+        <p><strong>האסטרטגיה:</strong> תמשיך עם מה שאתה עושה, וסיים את הקורסים הקריטיים כמה שיותר מהר.</p>
+      `,
+      actionsTitle: "הפוקוס שלך עכשיו:",
+      actions: [
+        "סיים את קורסי הליבה (מבני נתונים + אלגוריתמים) בהקדם",
+        "המשך תרגול LeetCode – אתה בכיוון הנכון",
+        "שפר את הפרויקט – הוסף README, טסטים, תיעוד",
+        "התחל Networking כבר עכשיו",
+      ],
+      cta: true,
+    },
+    finish_courses_has_project: {
+      emoji: "📘",
       title: "מעולה שיש לך פרויקט!",
       messageClass: "message-box--info",
       message: `
         <p>יש לך פרויקט אישי – זה יתרון אמיתי 👍</p>
-        <p>אבל בלי קורסי הליבה הקריטיים, רוב החברות לא יתקדמו איתך בתהליך.</p>
+        <p>אבל יש הרבה מקומות שיפסלו אותך על הסף אם לא תסיים את כל הקורסים הרלוונטיים.</p>
+        <p><strong>האסטרטגיה:</strong> להיות מוכן כמה שיותר בכל שאר ההיבטים – בזמן שאתה עושה את הקורסים האלה.</p>
       `,
       actionsTitle: "הפוקוס שלך עכשיו:",
       actions: [
         "סיים את קורסי הליבה (מבני נתונים + אלגוריתמים)",
-        "הבן מבני נתונים לעומק – לא רק לעבור מבחן",
-        "התחל בהדרגה תרגול שאלות",
+        "התחל תרגול LeetCode – זה ייתן לך יתרון ענק",
         "שפר את הפרויקט – הוסף README, טסטים, תיעוד",
+        "הבן מבני נתונים לעומק – לא רק לעבור מבחן",
+      ],
+      cta: true,
+    },
+    finish_courses_has_leetcode: {
+      emoji: "💪",
+      title: "מתרגל – עכשיו צריך להשלים קורסים",
+      messageClass: "message-box--info",
+      message: `
+        <p>מעולה שאתה כבר מתרגל אלגוריתמים! 🎯</p>
+        <p>אבל יש הרבה מקומות שיפסלו אותך על הסף בלי הקורסים הרלוונטיים.</p>
+        <p><strong>האסטרטגיה:</strong> תמשיך לתרגל, בנה פרויקט אישי, וסיים את הקורסים כמה שיותר מהר.</p>
+      `,
+      actionsTitle: "הפוקוס שלך עכשיו:",
+      actions: [
+        "סיים את קורסי הליבה (מבני נתונים + אלגוריתמים)",
+        "בנה פרויקט אישי משמעותי ב-GitHub",
+        "המשך תרגול LeetCode – אתה בכיוון טוב",
+        "התחל Networking כבר עכשיו",
       ],
       cta: true,
     },
@@ -128,15 +183,15 @@
       messageClass: "message-box--danger",
       message: `
         <p>אתה בשלב מוקדם – אבל זה בסדר גמור. כולם התחילו מפה.</p>
-        <p>זה הזמן האידיאלי לבנות פרויקט אישי רציני.</p>
+        <p>יש הרבה מקומות שיפסלו אותך על הסף בלי קורסים + פרויקט + תרגול.</p>
+        <p><strong>האסטרטגיה:</strong> להיות מוכן כמה שיותר בכל ההיבטים במקביל.</p>
       `,
-      actionsTitle: "🎯 פרויקט אישי ייתן לך:",
+      actionsTitle: "🎯 מה לעשות עכשיו:",
       actions: [
-        "ניסיון מעשי אמיתי בפיתוח",
-        "מה לשים בקורות חיים",
-        "ביטחון עצמי בראיון",
-        "יתרון מול סטודנטים אחרים",
-        "סיים קורסי ליבה במקביל!",
+        "סיים קורסי ליבה – מבני נתונים + אלגוריתמים",
+        "בנה פרויקט אישי רציני ב-GitHub",
+        "התחל תרגול LeetCode – אפילו Easy",
+        "זה ייתן לך ניסיון, ביטחון ויתרון בקורות חיים",
       ],
       cta: true,
     },
@@ -162,7 +217,9 @@
     nontech: $("#screen-nontech"),
     courses: $("#screen-courses"),
     "path-a": $("#screen-path-a"),
+    project: $("#screen-project"),
     "path-b": $("#screen-path-b"),
+    "leetcode-b": $("#screen-leetcode-b"),
     result: $("#screen-result"),
     score: $("#screen-score"),
   };
@@ -210,11 +267,13 @@
     const progressMap = {
       gate: { step: 1, fill: "10%" },
       nontech: { step: 1, fill: "10%", hide: true },
-      courses: { step: 1, fill: "33%" },
-      "path-a": { step: 2, fill: "66%" },
-      "path-b": { step: 2, fill: "66%" },
-      result: { step: 3, fill: "100%" },
-      score: { step: 3, fill: "100%" },
+      courses: { step: 1, fill: "25%" },
+      "path-a": { step: 2, fill: "50%" },
+      project: { step: 3, fill: "75%" },
+      "path-b": { step: 2, fill: "50%" },
+      "leetcode-b": { step: 3, fill: "75%" },
+      result: { step: 4, fill: "100%" },
+      score: { step: 4, fill: "100%" },
     };
 
     const p = progressMap[screenName];
@@ -296,11 +355,16 @@
       event_category: "wizard_interaction",
     });
     state.leetcodeStatus = isPracticing ? "practicing" : "not_practicing";
-    state.readyLevel = isPracticing
-      ? "ready_and_preparing"
-      : "academically_ready_not_interview_ready";
-    renderResult();
-    showScreen("result");
+
+    // Path A: leetcode answered → go to project question
+    if (state.courseStatus === "meets_threshold") {
+      showScreen("project");
+    } else {
+      // Path B: leetcode was last question → determine result & show
+      determineResult();
+      renderResult();
+      showScreen("result");
+    }
   }
 
   // ── Project Logic ──
@@ -310,11 +374,39 @@
       event_category: "wizard_interaction",
     });
     state.projectStatus = hasProject ? "has_project" : "no_project";
-    state.readyLevel = hasProject
-      ? "finish_courses_then_apply"
-      : "build_foundations_and_project";
-    renderResult();
-    showScreen("result");
+
+    // Path B: project answered → go to leetcode question
+    if (state.courseStatus === "not_ready_courses") {
+      showScreen("leetcode-b");
+    } else {
+      // Path A: project was last question → determine result & show
+      determineResult();
+      renderResult();
+      showScreen("result");
+    }
+  }
+
+  // ── Determine Result Based on All Answers ──
+  function determineResult() {
+    const hasCourses = state.courseStatus === "meets_threshold";
+    const hasLeetcode = state.leetcodeStatus === "practicing";
+    const hasProject = state.projectStatus === "has_project";
+
+    if (hasCourses && hasLeetcode && hasProject) {
+      state.readyLevel = "ready_and_preparing";
+    } else if (hasCourses && hasLeetcode && !hasProject) {
+      state.readyLevel = "ready_needs_project";
+    } else if (hasCourses && !hasLeetcode) {
+      state.readyLevel = "academically_ready_not_interview_ready";
+    } else if (!hasCourses && hasLeetcode && hasProject) {
+      state.readyLevel = "finish_courses_then_apply";
+    } else if (!hasCourses && hasProject) {
+      state.readyLevel = "finish_courses_has_project";
+    } else if (!hasCourses && hasLeetcode) {
+      state.readyLevel = "finish_courses_has_leetcode";
+    } else {
+      state.readyLevel = "build_foundations_and_project";
+    }
   }
 
   // ── Render Result ──

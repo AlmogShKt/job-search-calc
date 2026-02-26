@@ -102,6 +102,7 @@
         <span class="progress-step active" data-step="1">1</span>
         <span class="progress-step" data-step="2">2</span>
         <span class="progress-step" data-step="3">3</span>
+        <span class="progress-step" data-step="4">4</span>
       </div>
     </div>
 
@@ -310,16 +311,57 @@
         </div>
       </section>
 
+      <!-- ============================================== -->
+      <!-- SCREEN 4A-2: Project Question (after leetcode) -->
+      <!-- ============================================== -->
+      <section class="screen" id="screen-project" data-screen="project">
+        <div class="card">
+          <div class="card-emoji">💻</div>
+          <h2 class="card-title">פרויקט אישי</h2>
+          <div class="message-box message-box--info">
+            <p>
+              פרויקט אישי איכותי ב-GitHub נותן לך יתרון משמעותי בקורות חיים
+              ובראיונות.
+            </p>
+            <p>
+              זה מראה למעסיקים שאתה יודע לבנות משהו אמיתי – לא רק לעבור מבחנים.
+            </p>
+          </div>
+          <div class="card-question">
+            <p class="question-text">האם יש לך פרויקט אישי משמעותי ב-GitHub?</p>
+          </div>
+          <div class="button-group">
+            <button class="btn btn--primary" data-action="project-yes">
+              כן, יש לי פרויקט
+            </button>
+            <button class="btn btn--secondary" data-action="project-no">
+              לא, אין לי עדיין
+            </button>
+          </div>
+          <div class="button-group button-group--bottom">
+            <button class="btn btn--ghost" data-action="reset">
+              🔄 התחל מחדש
+            </button>
+          </div>
+        </div>
+      </section>
+
       <!-- ============================================ -->
-      <!-- SCREEN 4B: Path B – Personal Project Question -->
+      <!-- SCREEN 4B: Path B – Missing Courses Explanation + Project -->
       <!-- ============================================ -->
       <section class="screen" id="screen-path-b" data-screen="path-b">
         <div class="card">
           <div class="card-emoji" id="pathBEmoji">⚠️</div>
           <h2 class="card-title" id="pathBTitle">עדיין לא מומלץ להגיש</h2>
           <div class="message-box message-box--warning" id="pathBMessage">
-            <p>עדיין לא מומלץ להתחיל להגיש קורות חיים לרוב משרות הפיתוח.</p>
-            <p>הרבה חברות דורשות מבני נתונים ואלגוריתמים כדרישת סף.</p>
+            <p>
+              יש הרבה מקומות שיפסלו אותך על הסף אם לא תסיים את כל הקורסים
+              הרלוונטיים.
+            </p>
+            <p>
+              <strong>האסטרטגיה:</strong> להיות מוכן כמה שיותר בכל שאר ההיבטים –
+              בזמן שאתה עושה את הקורסים האלה.
+            </p>
           </div>
 
           <!-- "Almost there" message for 2/3 courses -->
@@ -337,17 +379,18 @@
           </div>
 
           <div class="info-section">
-            <h3 class="info-title">📌 למה זה חשוב?</h3>
+            <h3 class="info-title">📌 מה זה אומר?</h3>
             <ul class="info-list">
-              <li>90% מראיונות הפיתוח מבוססים על מבני נתונים ואלגוריתמים</li>
-              <li>זה הבסיס לחשיבה אלגוריתמית</li>
-              <li>בלי זה – גם LeetCode לא אפקטיבי</li>
+              <li>רוב החברות דורשות מבני נתונים ואלגוריתמים כדרישת סף</li>
+              <li>אבל – זה לא אומר שאי אפשר להתכונן במקביל!</li>
+              <li>פרויקט אישי + תרגול LeetCode עכשיו = יתרון ענק כשתסיים</li>
             </ul>
           </div>
 
           <div class="card-question">
-            <h3 class="question-text">🎯 מה כן לעשות עכשיו?</h3>
-            <p class="question-hint">האם יש לך פרויקט אישי משמעותי ב-GitHub?</p>
+            <h3 class="question-text">
+              🎯 בינתיים – האם יש לך פרויקט אישי ב-GitHub?
+            </h3>
           </div>
           <div class="button-group">
             <button class="btn btn--primary" data-action="project-yes">
@@ -375,6 +418,41 @@
               <p class="ad-banner-sub">לקורס →</p>
             </div>
           </a>
+          <div class="button-group button-group--bottom">
+            <button class="btn btn--ghost" data-action="reset">
+              🔄 התחל מחדש
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- SCREEN 4B-2: LeetCode Question (after path-b project) -->
+      <!-- ============================================== -->
+      <section class="screen" id="screen-leetcode-b" data-screen="leetcode-b">
+        <div class="card">
+          <div class="card-emoji">🧠</div>
+          <h2 class="card-title">תרגול אלגוריתמי</h2>
+          <div class="message-box message-box--info">
+            <p>גם אם חסרים לך קורסים – תרגול LeetCode עכשיו יעזור לך בהמשך.</p>
+            <p>
+              ברגע שתסיים את הקורסים, תהיה מוכן הרבה יותר מהר אם כבר התחלת
+              לתרגל.
+            </p>
+          </div>
+          <div class="card-question">
+            <p class="question-text">
+              האם אתה כבר מתרגל LeetCode / שאלות אלגוריתמיות?
+            </p>
+          </div>
+          <div class="button-group">
+            <button class="btn btn--primary" data-action="leetcode-yes">
+              כן, אני מתרגל
+            </button>
+            <button class="btn btn--secondary" data-action="leetcode-no">
+              לא, עדיין לא
+            </button>
+          </div>
           <div class="button-group button-group--bottom">
             <button class="btn btn--ghost" data-action="reset">
               🔄 התחל מחדש
