@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zero To Hero – הייטק מתחילים | Job Readiness Calculator</title>
+    <meta
+      name="description"
+      content="כלי אינטראקטיבי לבדיקת מוכנות לשוק העבודה בהייטק לסטודנטים"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Background texture layer -->
+    <div class="bg-texture" aria-hidden="true"></div>
+
+    <header class="app-header">
+      <div class="header-content">
+        <div class="logo-group">
+          <span class="logo-icon">🚀</span>
+          <div class="logo-text">
+            <h1 class="app-title">Zero To Hero</h1>
+            <p class="app-subtitle">הייטק מתחילים</p>
+          </div>
+        </div>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="החלף ערכת נושא"
+        >
+          <span class="theme-icon theme-icon--light">☀️</span>
+          <span class="theme-icon theme-icon--dark">🌙</span>
+        </button>
+      </div>
+      <!-- Sticky course banner -->
+      <div class="header-banner-wrap">
+        <a
+          href="https://www.univeli.com/course/prepare-me-for-high-tech"
+          target="_blank"
+          rel="noopener"
+          class="header-banner"
+        >
+          <img
+            src="assets/banner.jpg"
+            alt="Zero To Hero"
+            class="header-banner-img"
+          />
+          <div class="header-banner-text">
+            <span class="header-banner-title">🎓 הקורס המלא – הכנה להייטק</span>
+            <span class="header-banner-proof">⭐ 160+ סטודנטים כבר רכשו</span>
+          </div>
+          <span class="header-banner-cta">לקורס →</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Progress indicator -->
+    <div class="progress-bar-container" id="progressContainer">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-steps">
+        <span class="progress-step active" data-step="1">1</span>
+        <span class="progress-step" data-step="2">2</span>
+        <span class="progress-step" data-step="3">3</span>
+      </div>
+    </div>
+
+    <main class="main-content">
+      <!-- ======================== -->
+      <!-- SCREEN 1: Gate Question  -->
+      <!-- ======================== -->
+      <section
+        class="screen screen--active"
+        id="screen-gate"
+        data-screen="gate"
+      >
+        <div class="card card--hero">
+          <div class="card-emoji">🎯</div>
+          <h2 class="card-title">בדיקת מוכנות לשוק העבודה</h2>
+          <p class="card-description">
+            הכלי הזה יעזור לך להבין איפה אתה עומד/ת ומה הצעד הבא שלך בדרך לעבודה
+            ראשונה בהייטק.
+          </p>
+          <div class="card-question">
+            <p class="question-text">האם אתה סטודנט/ית במסלול טכנולוגי?</p>
+            <p class="question-hint">
+              (מדעי המחשב, הנדסת תוכנה, מדעי הנתונים וכדומה)
+            </p>
+          </div>
+          <div class="button-group">
+            <button class="btn btn--primary" data-action="gate-yes">
+              כן, אני במסלול טכנולוגי
+            </button>
+            <button class="btn btn--secondary" data-action="gate-no">
+              לא, אני מרקע אחר
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================ -->
+      <!-- SCREEN 2: Non-tech Student Msg   -->
+      <!-- ================================ -->
+      <section class="screen" id="screen-nontech" data-screen="nontech">
+        <div class="card card--info">
+          <div class="card-emoji">💡</div>
+          <h2 class="card-title">שים/י לב</h2>
+          <div class="message-box message-box--info">
+            <p>הכלי הזה מיועד לסטודנטים במסלולים טכנולוגיים.</p>
+            <p>
+              אם אתה מגיע מרקע אחר – אפשר בהחלט להיכנס להייטק, אבל המסלול שונה
+              ודורש בניית יסודות אחרים.
+            </p>
+            <p class="message-highlight">
+              מומלץ לבדוק קורסים כמו בוטקאמפ, קורסים מקוונים, או תכניות הסבה
+              טכנולוגיות.
+            </p>
+          </div>
+          <a
+            href="https://www.univeli.com/course/prepare-me-for-high-tech"
+            target="_blank"
+            rel="noopener"
+            class="ad-banner"
+          >
+            <img
+              src="assets/banner.jpg"
+              alt="Zero To Hero – קורס הכנה להייטק"
+              class="ad-banner-img"
+            />
+            <div class="ad-banner-content">
+              <span class="ad-banner-badge">מגיע מרקע אחר?</span>
+              <p class="ad-banner-title">הקורס הזה יעזור לך להיכנס להייטק</p>
+              <p class="ad-banner-social">⭐ מעל 160 סטודנטים כבר רכשו</p>
+              <p class="ad-banner-sub">למידע נוסף →</p>
+            </div>
+          </a>
+          <div class="button-group">
+            <button class="btn btn--ghost" data-action="reset">
+              🔄 התחל מחדש
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ -->
+      <!-- SCREEN 3: Course Checklist   -->
+      <!-- ============================ -->
+      <section class="screen" id="screen-courses" data-screen="courses">
+        <div class="card card--form">
+          <div class="card-emoji">📚</div>
+          <h2 class="card-title">אילו קורסים כבר סיימת?</h2>
+          <p class="card-description">סמן/י את כל הקורסים שסיימת בהצלחה.</p>
+
+          <!-- Critical Courses -->
+          <div class="course-group">
+            <h3 class="course-group-title">
+              <span class="group-badge group-badge--critical">חובה</span>
+              קורסי ליבה קריטיים
+            </h3>
+            <div class="checkbox-list">
+              <label class="checkbox-item checkbox-item--critical">
+                <input type="checkbox" name="course" value="intro_cs" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">מבוא למדעי המחשב</span>
+              </label>
+              <label class="checkbox-item checkbox-item--critical">
+                <input type="checkbox" name="course" value="data_structures" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">מבני נתונים</span>
+              </label>
+              <label class="checkbox-item checkbox-item--critical">
+                <input type="checkbox" name="course" value="algorithms" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">אלגוריתמים</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Supporting Courses -->
+          <div class="course-group">
+            <h3 class="course-group-title">
+              <span class="group-badge group-badge--supporting">מומלץ</span>
+              קורסים תומכים חשובים
+            </h3>
+            <div class="checkbox-list">
+              <label class="checkbox-item">
+                <input type="checkbox" name="course" value="oop" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">תכנות מונחה עצמים (OOP)</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="course" value="os" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">מערכות הפעלה</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="course" value="networks" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">רשתות תקשורת</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="course" value="databases" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">בסיסי נתונים</span>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="course"
+                  value="software_engineering"
+                />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">מבוא להנדסת תוכנה</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="course" value="compilation" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">קומפילציה</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="course" value="architecture" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">ארכיטקטורת מחשבים</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button class="btn btn--primary" data-action="submit-courses">
+              המשך
+            </button>
+            <button class="btn btn--ghost" data-action="reset">
+              🔄 התחל מחדש
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================== -->
+      <!-- SCREEN 4A: Path A – LeetCode Question  -->
+      <!-- ====================================== -->
+      <section class="screen" id="screen-path-a" data-screen="path-a">
+        <div class="card">
+          <div class="card-emoji">✅</div>
+          <h2 class="card-title">מעולה! אתה עומד בדרישות הסף</h2>
+          <div class="message-box message-box--success">
+            <p>אתה עומד/ת בדרישות הסף האקדמיות לרוב משרות הסטודנט והג'וניור.</p>
+            <p class="message-highlight">
+              זה הזמן להתחיל להיות אקטיבי מאוד בחיפוש עבודה.
+            </p>
+          </div>
+          <div class="card-question">
+            <p class="question-text">
+              האם אתה כבר מתרגל LeetCode / שאלות אלגוריתמיות?
+            </p>
+          </div>
+          <div class="button-group">
+            <button class="btn btn--primary" data-action="leetcode-yes">
+              כן, אני מתרגל
+            </button>
+            <button class="btn btn--secondary" data-action="leetcode-no">
+              לא, עדיין לא
+            </button>
+          </div>
+          <div class="button-group button-group--bottom">
+            <button class="btn btn--ghost" data-action="reset">
+              🔄 התחל מחדש
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SCREEN 4B: Path B – Personal Project Question -->
+      <!-- ============================================ -->
+      <section class="screen" id="screen-path-b" data-screen="path-b">
+        <div class="card">
+          <div class="card-emoji" id="pathBEmoji">⚠️</div>
+          <h2 class="card-title" id="pathBTitle">עדיין לא מומלץ להגיש</h2>
+          <div class="message-box message-box--warning" id="pathBMessage">
+            <p>עדיין לא מומלץ להתחיל להגיש קורות חיים לרוב משרות הפיתוח.</p>
+            <p>הרבה חברות דורשות מבני נתונים ואלגוריתמים כדרישת סף.</p>
+          </div>
+
+          <!-- "Almost there" message for 2/3 courses -->
+          <div
+            class="almost-there-msg"
+            id="almostThereMsg"
+            style="display: none"
+          >
+            <div class="message-box message-box--info">
+              <p>
+                💪 <strong>כמעט שם!</strong> חסר לך רק קורס אחד מקורסי הליבה
+                הקריטיים. סיים אותו ואתה בדרך!
+              </p>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <h3 class="info-title">📌 למה זה חשוב?</h3>
+            <ul class="info-list">
+              <li>90% מראיונות הפיתוח מבוססים על מבני נתונים ואלגוריתמים</li>
+              <li>זה הבסיס לחשיבה אלגוריתמית</li>
+              <li>בלי זה – גם LeetCode לא אפקטיבי</li>
+            </ul>
+          </div>
+
+          <div class="card-question">
+            <h3 class="question-text">🎯 מה כן לעשות עכשיו?</h3>
+            <p class="question-hint">האם יש לך פרויקט אישי משמעותי ב-GitHub?</p>
+          </div>
+          <div class="button-group">
+            <button class="btn btn--primary" data-action="project-yes">
+              כן, יש לי פרויקט
+            </button>
+            <button class="btn btn--secondary" data-action="project-no">
+              לא, אין לי עדיין
+            </button>
+          </div>
+          <a
+            href="https://www.univeli.com/course/prepare-me-for-high-tech"
+            target="_blank"
+            rel="noopener"
+            class="ad-banner ad-banner--compact"
+          >
+            <img
+              src="assets/banner.jpg"
+              alt="Zero To Hero – קורס הכנה להייטק"
+              class="ad-banner-img"
+            />
+            <div class="ad-banner-content">
+              <span class="ad-banner-badge">קורס מלא</span>
+              <p class="ad-banner-title">למד איך להתכונן נכון לשוק העבודה</p>
+              <p class="ad-banner-social">⭐ מעל 160 סטודנטים כבר רכשו</p>
+              <p class="ad-banner-sub">לקורס →</p>
+            </div>
+          </a>
+          <div class="button-group button-group--bottom">
+            <button class="btn btn--ghost" data-action="reset">
+              🔄 התחל מחדש
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================== -->
+      <!-- SCREEN 5: Final Result   -->
+      <!-- ======================== -->
+      <section class="screen" id="screen-result" data-screen="result">
+        <div class="card card--result">
+          <div class="card-emoji result-emoji" id="resultEmoji">🚀</div>
+          <h2 class="card-title result-title" id="resultTitle"></h2>
+          <div class="message-box result-message" id="resultMessage"></div>
+          <div class="action-items" id="resultActions"></div>
+          <div class="button-group" style="margin-block-start: 2rem">
+            <button class="btn btn--accent" data-action="show-score">
+              📊 ראה ניקוד מפורט
+            </button>
+          </div>
+          <div class="button-group button-group--bottom">
+            <button class="btn btn--ghost" data-action="reset">
+              🔄 התחל מחדש
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================= -->
+      <!-- SCREEN 6: Scoring Dashboard       -->
+      <!-- ================================= -->
+      <section class="screen" id="screen-score" data-screen="score">
+        <div class="card card--score">
+          <div class="card-emoji">📊</div>
+          <h2 class="card-title">ניקוד מוכנות מפורט</h2>
+
+          <!-- Total score gauge -->
+          <div class="score-gauge-container">
+            <div class="score-gauge">
+              <svg class="gauge-svg" viewBox="0 0 200 120">
+                <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" />
+                <path
+                  class="gauge-fill"
+                  id="gaugeFill"
+                  d="M 20 100 A 80 80 0 0 1 180 100"
+                />
+              </svg>
+              <div class="gauge-value">
+                <span id="gaugeValue">0</span
+                ><span class="gauge-max">/ 180</span>
+              </div>
+            </div>
+            <div class="score-band" id="scoreBand"></div>
+          </div>
+
+          <!-- Per-category breakdown -->
+          <div class="score-breakdown" id="scoreBreakdown"></div>
+
+          <!-- Score bands legend -->
+          <div class="score-legend">
+            <h3 class="legend-title">סולם הניקוד</h3>
+            <div class="legend-items">
+              <div class="legend-item">
+                <span class="legend-dot legend-dot--red"></span>
+                <span>0–40: מוקדם מדי</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot legend-dot--orange"></span>
+                <span>40–80: בבנייה, לא להגיש עדיין</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot legend-dot--yellow"></span>
+                <span>80–120: להתכונן ברצינות</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot legend-dot--green"></span>
+                <span>120+: להגיש בצורה אגרסיבית</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-group" style="margin-block-start: 2rem">
+            <button class="btn btn--ghost" data-action="back-to-result">
+              חזרה לתוצאה →
+            </button>
+            <button class="btn btn--ghost" data-action="reset">
+              🔄 התחל מחדש
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Zero To Hero · הייטק מתחילים · כלי לבדיקת מוכנות לשוק העבודה</p>
+      <div class="footer-links">
+        <a
+          href="https://www.univeli.com/course/prepare-me-for-high-tech"
+          target="_blank"
+          rel="noopener"
+          >🎓 הקורס המלא</a
+        >
+        <span class="footer-sep">·</span>
+        <a
+          href="https://linktr.ee/AlmogZeroToHero"
+          target="_blank"
+          rel="noopener"
+          >👥 הקהילה שלנו</a
+        >
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
