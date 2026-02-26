@@ -51,7 +51,7 @@
     {
       min: 80,
       max: 120,
-      label: "להתכונן ברצינות",
+      label: "יש בסיס טוב - זה הזמן להגביר הילוך",
       cssClass: "score-band--yellow",
       color: "#ca8a04",
     },
