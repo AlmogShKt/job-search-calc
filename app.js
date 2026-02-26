@@ -581,6 +581,13 @@
     // Uncheck all checkboxes
     $$('input[name="course"]').forEach((cb) => (cb.checked = false));
 
+    // Reset feedback widget
+    $$("#feedbackSection .feedback-emoji-btn").forEach((btn) => {
+      btn.disabled = false;
+      btn.classList.remove("selected");
+    });
+    $("#feedbackThanks").classList.add("hidden");
+
     // Reset gauge
     const gaugeFill = $("#gaugeFill");
     if (gaugeFill) {
@@ -611,6 +618,32 @@
   // ── Event Delegation ──
   function initEvents() {
     document.addEventListener("click", (e) => {
+      // Handle feedback rating (before action-button guard)
+      const feedbackBtn = e.target.closest(".feedback-emoji-btn");
+      if (feedbackBtn && !feedbackBtn.disabled) {
+        const rating = parseInt(feedbackBtn.dataset.rating, 10);
+        const section = feedbackBtn.closest(".feedback-section");
+        if (!section) return;
+
+        // Disable all buttons and highlight selection
+        section.querySelectorAll(".feedback-emoji-btn").forEach((btn) => {
+          btn.disabled = true;
+          btn.classList.remove("selected");
+        });
+        feedbackBtn.classList.add("selected");
+
+        // Show thank-you message
+        $("#feedbackThanks").classList.remove("hidden");
+
+        // Track with Google Analytics
+        trackEvent("tool_feedback", {
+          rating: rating,
+          ready_level: state.readyLevel,
+          event_category: "feedback",
+        });
+        return;
+      }
+
       const btn = e.target.closest("[data-action]");
       if (!btn) return;
 
