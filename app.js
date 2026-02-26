@@ -171,6 +171,13 @@
   const progressSteps = $$(".progress-step");
   const progressContainer = $("#progressContainer");
 
+  // ── Analytics Helper ──
+  function trackEvent(eventName, params) {
+    if (typeof gtag === "function") {
+      gtag("event", eventName, params);
+    }
+  }
+
   // ── Screen Management ──
   function showScreen(name) {
     // Hide all screens
@@ -191,6 +198,12 @@
     state.currentScreen = name;
     updateProgress(name);
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Track screen view
+    trackEvent("wizard_step", {
+      screen_name: name,
+      event_category: "wizard_progress",
+    });
   }
 
   function updateProgress(screenName) {
@@ -225,6 +238,10 @@
 
   // ── Gate Logic ──
   function handleGate(isTechStudent) {
+    trackEvent("gate_answer", {
+      is_tech_student: isTechStudent,
+      event_category: "wizard_interaction",
+    });
     if (isTechStudent) {
       showScreen("courses");
     } else {
@@ -241,6 +258,13 @@
 
     const criticalChecked = CRITICAL_COURSES.filter((c) => checked.includes(c));
     state.criticalCount = criticalChecked.length;
+
+    trackEvent("courses_selected", {
+      courses: checked.join(","),
+      course_count: checked.length,
+      critical_count: criticalChecked.length,
+      event_category: "wizard_interaction",
+    });
 
     if (criticalChecked.length === CRITICAL_COURSES.length) {
       state.courseStatus = "meets_threshold";
@@ -267,6 +291,10 @@
 
   // ── LeetCode Logic ──
   function handleLeetcode(isPracticing) {
+    trackEvent("leetcode_answer", {
+      is_practicing: isPracticing,
+      event_category: "wizard_interaction",
+    });
     state.leetcodeStatus = isPracticing ? "practicing" : "not_practicing";
     state.readyLevel = isPracticing
       ? "ready_and_preparing"
@@ -277,6 +305,10 @@
 
   // ── Project Logic ──
   function handleProject(hasProject) {
+    trackEvent("project_answer", {
+      has_project: hasProject,
+      event_category: "wizard_interaction",
+    });
     state.projectStatus = hasProject ? "has_project" : "no_project";
     state.readyLevel = hasProject
       ? "finish_courses_then_apply"
@@ -289,6 +321,12 @@
   function renderResult() {
     const config = RESULTS[state.readyLevel];
     if (!config) return;
+
+    trackEvent("result_shown", {
+      ready_level: state.readyLevel,
+      courses_selected: state.selectedCourses.join(","),
+      event_category: "wizard_result",
+    });
 
     $("#resultEmoji").textContent = config.emoji;
     $("#resultTitle").textContent = config.title;
@@ -366,6 +404,14 @@
       SCORE_BANDS.find((b) => total >= b.min && total < b.max) ||
       SCORE_BANDS[SCORE_BANDS.length - 1];
 
+    trackEvent("score_viewed", {
+      score: total,
+      max_score: MAX_SCORE,
+      score_percent: Math.round((total / MAX_SCORE) * 100),
+      band_label: band.label,
+      event_category: "wizard_result",
+    });
+
     // Animate after a brief delay for effect
     requestAnimationFrame(() => {
       gaugeFill.style.strokeDashoffset = offset;
@@ -426,6 +472,10 @@
 
   // ── Reset ──
   function resetWizard() {
+    trackEvent("wizard_reset", {
+      from_screen: state.currentScreen,
+      event_category: "wizard_interaction",
+    });
     state = {
       currentScreen: "gate",
       selectedCourses: [],
@@ -511,6 +561,46 @@
 
     // Theme toggle
     $("#themeToggle").addEventListener("click", toggleTheme);
+
+    // Track banner & community link clicks
+    document.addEventListener("click", (e) => {
+      const banner = e.target.closest(".ad-banner, .header-banner");
+      if (banner) {
+        trackEvent("banner_click", {
+          banner_location: banner.closest(".header-banner-wrap")
+            ? "header"
+            : banner.closest('[data-screen="nontech"]')
+              ? "nontech"
+              : banner.closest('[data-screen="path-b"]')
+                ? "path_b"
+                : banner.closest('[data-screen="result"]')
+                  ? "result"
+                  : "unknown",
+          link_url: banner.href,
+          event_category: "outbound_click",
+        });
+      }
+
+      const community = e.target.closest(
+        '.community-link, a[href*="linktr.ee"]',
+      );
+      if (community) {
+        trackEvent("community_click", {
+          link_url: community.href,
+          click_location: state.currentScreen,
+          event_category: "outbound_click",
+        });
+      }
+
+      const footerLink = e.target.closest(".footer-link");
+      if (footerLink) {
+        trackEvent("footer_link_click", {
+          link_url: footerLink.href,
+          link_text: footerLink.textContent.trim(),
+          event_category: "outbound_click",
+        });
+      }
+    });
   }
 
   // ── Init ──
